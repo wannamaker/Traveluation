@@ -20,7 +20,7 @@ src
        |__ About.jsx
        
 API
-based on multiple endpoints located on https://travelpayouts.github.io/
+based on multiple endpoints located on https://travelpayouts.github.io/slate/#hotels-data-api
 ```json
 {
     "status": "ok",
