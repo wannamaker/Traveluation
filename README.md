@@ -20,6 +20,7 @@ src
        |__ About.jsx
        
 API
+based on multiple endpoints located on https://travelpayouts.github.io/
 ```json
 {
     "status": "ok",
