@@ -8,12 +8,13 @@ body {
   background-color: teal;
   position: relative;
   min-height: 100vh;
-  /* padding-bottom: 60px; */
+  padding-bottom: 70px;
 }
 
 main {
   
   margin: 0px auto;
+  /* margin-bottom: 20px; */
   width: 90%;
   position: relative;
   

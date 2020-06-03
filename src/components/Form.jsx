@@ -40,12 +40,10 @@ export default class Form extends Component {
   }
   submitSearch = async (e) => {
     e.preventDefault();
-    const url = `http://engine.hotellook.com/api/v2/cache.json?location=${this.state.city}&checkIn=${this.state.checkIn}&checkOut=${this.state.checkOut}&currency=usd&limit=100&token=52f750a3f26ab5edeadc822d21a36d69`
+    const url = `http://engine.hotellook.com/api/v2/cache.json?location=${this.state.city}&checkIn=${this.state.checkIn}&checkOut=${this.state.checkOut}&currency=usd&limit=10&token=52f750a3f26ab5edeadc822d21a36d69`
     const hotels = await axios(url)
     // console.log(hotels.data)
-    this.setState({
-      hotelArray: hotels.data
-    })
+    this.props.reservation(hotels.data)
     console.log(this.state.hotelArray)
   } 
 
@@ -55,17 +53,13 @@ export default class Form extends Component {
     
     return (
       <div>
+        
         <form>
           <input type="text" placeholder="City" onChange={this.handleCityChange}/>
           <input type="date" placeholder="Check-in" onChange={this.handleCheckInChange}/>
           <input type="date" placeholder="Check-out" onChange={this.handleCheckOutChange}/>
           <button onClick={this.submitSearch}>Submit</button>
         </form>
-
-        <div className="info-containe">
-          <div className="hotel-picture"></div>
-          <div className="hotel-info"></div>
-        </div>
 
       </div>
     )
