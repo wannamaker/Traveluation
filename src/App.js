@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
 import { Component } from 'react'
+import { Route, Link, BrowserRouter } from "react-router-dom"
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Form from './components/Form';
-import { Route, Link, BrowserRouter } from "react-router-dom"
 import HotelsList from './components/HotelsList';
+import HotelDetails from './components/HotelDetails';
 
 class App extends Component {
 
@@ -26,10 +27,15 @@ class App extends Component {
         <Header />
         
         <main className="container">
+          
+        
+          
           <Route path="/" exact>
           <Form reservation={this.reservation} />
-           
-            <HotelsList hotelArray={this.state.hotelArray}/>
+           <HotelsList hotelArray={this.state.hotelArray}/>
+          </Route>
+          <Route path="/:hotel">
+            <HotelDetails hotelArray={this.state.hotelArray}/>
           </Route>
         </main>
       

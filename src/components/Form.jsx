@@ -34,10 +34,10 @@ export default class Form extends Component {
     })
   }
 
-  componentDidMount = async () => {
+  // componentDidMount = async () => {
     
-    // this.submitSearch()
-  }
+  //   this.submitSearch()
+  // }
   submitSearch = async (e) => {
     e.preventDefault();
     const url = `http://engine.hotellook.com/api/v2/cache.json?location=${this.state.city}&checkIn=${this.state.checkIn}&checkOut=${this.state.checkOut}&currency=usd&limit=10&token=52f750a3f26ab5edeadc822d21a36d69`
