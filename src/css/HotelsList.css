@@ -1,0 +1,56 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.info-container{
+display: grid;
+grid-template-columns: 25% 50% 25%;
+margin-top: 20px;
+}
+
+.hotel-picture{
+overflow: auto;
+margin: 2px;
+border: solid black;
+}
+
+.hotel-info{
+overflow: auto;
+margin: 2px;
+border: solid black;
+text-align: center;
+}
+
+.detail-container {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}
+.price-display{
+  overflow: auto;
+  background-color: blue;
+  /* padding: 20px; */
+  height: 120px;
+}
+.p-price {
+  height: 20px;
+}
+
+.detail-info{
+  overflow: auto;
+  background-color: blueviolet;
+}
+
+.location {
+  overflow: auto;
+  background-color: brown;
+}
+
+.map {
+overflow: auto;
+background-color: wheat;
+margin: 2px;
+border: solid black;
+}
