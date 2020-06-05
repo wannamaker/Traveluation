@@ -11,7 +11,8 @@ export default class Form extends Component {
       city: "",
       checkIn: "",
       checkOut: "",
-      hotelArray: []
+      // hotelArray: [],
+      // hotelArrayInfo: []
     }
 
   }
@@ -42,9 +43,17 @@ export default class Form extends Component {
     e.preventDefault();
     const url = `http://engine.hotellook.com/api/v2/cache.json?location=${this.state.city}&checkIn=${this.state.checkIn}&checkOut=${this.state.checkOut}&currency=usd&limit=10&token=52f750a3f26ab5edeadc822d21a36d69`
     const hotels = await axios(url)
-    // console.log(hotels.data)
+     console.log(hotels.data)
     this.props.reservation(hotels.data)
-    console.log(this.state.hotelArray)
+    console.log(hotels.data[0].locationId)
+
+    
+    const url2 = `http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=usd&language=en&limit=10&id=${hotels.data[0].locationId}&type=popularity&check_in=${this.state.checkIn}&check_out=${this.state.checkOut}&token=52f750a3f26ab5edeadc822d21a36d69`
+    const hotelInfo = await axios(url2) 
+    //console.log(hotelInfo)
+    this.props.reserveInfo(hotelInfo.data.popularity)
+
+    console.log(hotelInfo.data.popularity)
   } 
 
   

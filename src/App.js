@@ -11,12 +11,19 @@ import HotelDetails from './components/HotelDetails';
 class App extends Component {
 
   state = {
-    hotelArray: []
+    hotelArray: [],
+    hotelArrayInfo: []
   }
 
   reservation = (hotels) => {
     this.setState({
-       hotelArray: hotels
+      hotelArray: hotels
+     })
+  }
+
+  reserveInfo = (hotelsInfo) => {
+    this.setState({
+      hotelArrayInfo: hotelsInfo
      })
   }
 
@@ -31,11 +38,11 @@ class App extends Component {
         
           
           <Route path="/" exact>
-          <Form reservation={this.reservation} />
-           <HotelsList hotelArray={this.state.hotelArray}/>
+          <Form reservation={this.reservation} reserveInfo={this.reserveInfo}/>
+           <HotelsList hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo}/>
           </Route>
           <Route path="/:hotel">
-            <HotelDetails hotelArray={this.state.hotelArray}/>
+            <HotelDetails hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo}/>
           </Route>
         </main>
       
