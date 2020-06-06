@@ -19,12 +19,13 @@ class HotelsMap extends Component {
     activeMarker: {},          //Shows the active marker upon click
     selectedPlace: {},          //Shows the infoWindow to the selected place upon a marker
     hotelName: '',
+    city:'',
     mapData: null
   };
 
 
   async componentDidMount() {
-    const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.hotelName}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`;
+    const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.city}+${this.props.hotelName}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`;
     const nameSearch = await axios(url)
     // console.log(nameSearch.data.results[0].geometry.location)
     this.setState({

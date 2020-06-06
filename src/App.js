@@ -14,7 +14,14 @@ class App extends Component {
 
   state = {
     hotelArray: [],
-    hotelArrayInfo: []
+    hotelArrayInfo: [],
+    city: ''
+  }
+
+  passCity = (hotelsCity) => {
+    this.setState({
+      city: hotelsCity
+    })
   }
 
   reservation = (hotels) => {
@@ -40,8 +47,8 @@ class App extends Component {
         
           
           <Route path="/" exact>
-          <Form reservation={this.reservation} reserveInfo={this.reserveInfo}/>
-           <HotelsList hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo}/>
+            <Form reservation={this.reservation} reserveInfo={this.reserveInfo} passCity={this.passCity}/>
+            <HotelsList hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo} city={this.state.city}/>
           </Route>
           <Route path="/:hotel">
             <HotelDetails hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo}/>

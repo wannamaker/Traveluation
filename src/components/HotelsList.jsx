@@ -7,11 +7,13 @@ import HotelsMap from './HotelsMap';
 
 
 export default function HotelsList(props) {
+  console.log(props.city)
   
   
-  
-    return (
-      <div>
+  return (
+    
+    <div>
+      
         {props.hotelArrayInfo.map(hotel =>
 
           <Link to={`/${hotel.hotel_id}`}>
@@ -49,7 +51,7 @@ export default function HotelsList(props) {
 
 
               <div className="map">
-                <HotelsMap hotelName={hotel.name} />
+                <HotelsMap hotelName={hotel.name} city={props.city}/>
               </div>
 
             </div>

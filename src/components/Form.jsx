@@ -45,6 +45,7 @@ export default class Form extends Component {
     const hotels = await axios(url)
      console.log(hotels.data)
     this.props.reservation(hotels.data)
+    this.props.passCity(this.state.city)
     console.log(hotels.data[0].locationId)
 
     
@@ -53,8 +54,8 @@ export default class Form extends Component {
     //console.log(hotelInfo)
     this.props.reserveInfo(hotelInfo.data.popularity)
 
-    // console.log(hotelInfo.data.popularity)
-    console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+    console.log(hotelInfo.data.popularity)
+    
   } 
 
   
