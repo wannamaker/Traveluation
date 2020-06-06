@@ -53,7 +53,8 @@ export default class Form extends Component {
     //console.log(hotelInfo)
     this.props.reserveInfo(hotelInfo.data.popularity)
 
-    console.log(hotelInfo.data.popularity)
+    // console.log(hotelInfo.data.popularity)
+    console.log(process.env.REACT_APP_GOOGLE_API_KEY)
   } 
 
   

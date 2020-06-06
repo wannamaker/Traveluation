@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import { Component } from 'react'
-import { Route, Link, BrowserRouter } from "react-router-dom"
+import { Component } from 'react';
+import { Route, Link, BrowserRouter } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Form from './components/Form';
 import HotelsList from './components/HotelsList';
 import HotelDetails from './components/HotelDetails';
+import HotelsMap from './components/HotelsMap';
+
 
 class App extends Component {
 
@@ -44,6 +46,7 @@ class App extends Component {
           <Route path="/:hotel">
             <HotelDetails hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo}/>
           </Route>
+          
         </main>
       
         <Footer />
