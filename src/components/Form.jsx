@@ -12,7 +12,8 @@ export default class Form extends Component {
       checkIn: "",
       checkOut: "",
       // hotelArray: [],
-      // hotelArrayInfo: []
+      hotelArrayInfo: [],
+      formSubmitted: false
     }
 
   }
@@ -41,7 +42,10 @@ export default class Form extends Component {
   // }
   submitSearch = async (e) => {
     e.preventDefault();
-    const url = `http://engine.hotellook.com/api/v2/cache.json?location=${this.state.city}&checkIn=${this.state.checkIn}&checkOut=${this.state.checkOut}&currency=usd&limit=10&token=${process.env.REACT_APP_TRAVEL_API_KEY}`
+    
+this.props.passSubmit()
+
+    const url = `http://engine.hotellook.com/api/v2/cache.json?location=${this.state.city}&checkIn=${this.state.checkIn}&checkOut=${this.state.checkOut}&currency=usd&limit=20&token=${process.env.REACT_APP_TRAVEL_API_KEY}`
     const hotels = await axios(url)
      console.log(hotels.data)
     this.props.reservation(hotels.data)
@@ -49,13 +53,17 @@ export default class Form extends Component {
     console.log(hotels.data[0].locationId)
 
     
-    const url2 = `http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=usd&language=en&limit=10&id=${hotels.data[0].locationId}&type=popularity&check_in=${this.state.checkIn}&check_out=${this.state.checkOut}&token=${process.env.REACT_APP_TRAVEL_API_KEY}`
+    const url2 = `http://yasen.hotellook.com/tp/public/widget_location_dump.json?currency=usd&language=en&limit=20&id=${hotels.data[0].locationId}&type=popularity&check_in=${this.state.checkIn}&check_out=${this.state.checkOut}&token=${process.env.REACT_APP_TRAVEL_API_KEY}`
     const hotelInfo = await axios(url2) 
     //console.log(hotelInfo)
     this.props.reserveInfo(hotelInfo.data.popularity)
 
     console.log(hotelInfo.data.popularity)
-    
+
+    this.setState({
+      hotelArrayInfo: hotelInfo.data.popularity
+    })
+    console.log(this.state.hotelArrayInfo)
   } 
 
   
@@ -64,15 +72,18 @@ export default class Form extends Component {
     
     return (
       <div>
+      <div className="div-form">
         
-        <form>
-          <input type="text" placeholder="City" onChange={this.handleCityChange}/>
-          <input type="date" placeholder="Check-in" onChange={this.handleCheckInChange}/>
-          <input type="date" placeholder="Check-out" onChange={this.handleCheckOutChange}/>
-          <button onClick={this.submitSearch}>Submit</button>
+        <form className="initial-form">
+          <input type="text" placeholder="City" onChange={this.handleCityChange} className="form-city"/>
+          <input type="date" placeholder="Check-in" onChange={this.handleCheckInChange} className="form-date-in"/>
+          <input type="date" placeholder="Check-out" onChange={this.handleCheckOutChange} className="form-date-out"/>
+          <button onClick={this.submitSearch} className="form-button">Submit</button>
         </form>
-
-      </div>
+        
+        </div>
+       
+        </div>
     )
   }
 }

@@ -6,22 +6,32 @@
 }
 
 .info-container{
+width: 80%;
+margin: 0 auto;
 display: grid;
-grid-template-columns: 25% 50% 25%;
+grid-template-columns: 27.7% 45% 27.5%;
 margin-top: 20px;
+font-family: 'Open Sans', sans-serif;
+border: solid green;
+border-radius: 5px;
 }
 
 .hotel-picture{
 overflow: auto;
 margin: 2px;
-border: solid black;
+/* border: solid black; */
+}
+
+.hotel-image-front{
+  width: 100%;
 }
 
 .hotel-info{
 overflow: auto;
 margin: 2px;
-border: solid black;
+/* border: solid black; */
 text-align: center;
+color: green;
 }
 
 .detail-container {
@@ -31,6 +41,7 @@ text-align: center;
 .price-display{
   overflow: auto;
   background-color: white;
+  color: brown;
   /* padding: 20px; */
   /* height: 120px; */
 }
@@ -45,12 +56,26 @@ text-align: center;
 
 .location {
   overflow: auto;
-  background-color: brown;
+  background-color: white;
 }
 
 .map {
 overflow: auto;
 background-color: wheat;
 margin: 2px;
-border: solid black;
+/* border: solid black; */
+}
+
+.loading {
+height: 200px;
+width: 20%;
+margin: 50px auto;
+}
+.lnk {
+  text-decoration: none;
+  color: black;
+}
+.lnk:hover{
+  text-decoration: green;
+  color: green;
 }

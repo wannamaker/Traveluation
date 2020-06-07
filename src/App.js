@@ -8,6 +8,7 @@ import Form from './components/Form';
 import HotelsList from './components/HotelsList';
 import HotelDetails from './components/HotelDetails';
 import HotelsMap from './components/HotelsMap';
+import About from './components/About';
 
 
 class App extends Component {
@@ -15,7 +16,14 @@ class App extends Component {
   state = {
     hotelArray: [],
     hotelArrayInfo: [],
-    city: ''
+    city: '',
+    formSubmitted: false
+  }
+
+  passSubmit = () => {
+    this.setState({
+      formSubmitted: true
+    })
   }
 
   passCity = (hotelsCity) => {
@@ -32,7 +40,8 @@ class App extends Component {
 
   reserveInfo = (hotelsInfo) => {
     this.setState({
-      hotelArrayInfo: hotelsInfo
+      hotelArrayInfo: hotelsInfo,
+      formSubmitted: false
      })
   }
 
@@ -47,13 +56,16 @@ class App extends Component {
         
           
           <Route path="/" exact>
-            <Form reservation={this.reservation} reserveInfo={this.reserveInfo} passCity={this.passCity}/>
-            <HotelsList hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo} city={this.state.city}/>
+            <Form reservation={this.reservation} reserveInfo={this.reserveInfo} passCity={this.passCity} passSubmit={this.passSubmit}/>
+            <HotelsList hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo} city={this.state.city} passSubmit={this.passSubmit} formSubmitted={this.state.formSubmitted}/>
           </Route>
           <Route path="/:hotel">
             <HotelDetails hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo}/>
           </Route>
-          
+
+          <Route path="/About">
+          <About/>
+          </Route>
         </main>
       
         <Footer />

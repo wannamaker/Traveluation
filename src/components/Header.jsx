@@ -7,16 +7,21 @@ export default function Header() {
     <div>
       <header>
         <nav>
-          <h2 className="home-tiltle">
-            <Link to="/">
-              Traveluation
-              </Link>
-            <span>
-            <Link to="/about">
-              About
-              </Link>
-              </span>
-          </h2>
+          <div>
+          
+            <div className="title">
+                <Link to="/" className="lnk">
+                     <h3 className="home-tiltle">Traveluation</h3>   
+                  </Link>
+              </div>
+              
+
+              <div className="about">
+              <Link to="/about" className="lnk">
+                      <h4>About</h4>
+                      </Link>
+                 </div>
+         </div> 
         </nav>
       </header>
 

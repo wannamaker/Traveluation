@@ -1,20 +1,21 @@
 .footer {
-  height: 20px;
-  background-color: rgb(68,68,68);
-  padding: 20px;
+  height: 25px;
+  background-color: rgb(188,240,224);
+  /* padding: 20px; */
+  font-family: 'Acme', sans-serif;
   margin-top: 30px;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   text-align: center;
-  color:  white;
+  color: gray;
   position: fixed;
   width: 100%;
   bottom: 0;
 }
 
-/* .h-footer {
+.h-footer {
   
 }
 
-.div-footer {
+/* .div-footer {
 
 } */

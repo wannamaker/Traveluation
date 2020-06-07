@@ -6,9 +6,9 @@ import '../css/HotelsMap.css';
 
 
 const mapStyles = {
-  width: '295px',
+  width: '280px',
   // height: '100%'
-  height: '163px',
+  height: '287px',
   margin: '0px'
 };
 
@@ -76,7 +76,7 @@ class HotelsMap extends Component {
           this.state.mapData &&
           <Map
           google={this.props.google}
-          zoom={14}
+          zoom={16}
           style={mapStyles}
           initialCenter={{
             lat: this.state.mapData.lat, lng: this.state.mapData.lng

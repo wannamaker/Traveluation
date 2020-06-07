@@ -1,3 +1,45 @@
-input, button {
-  margin-left: 30px;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input, button, form {
+  /* margin: 0 auto; */
+}
+
+.initial-form {
+  /* margin: 0 auto;
+  height: 40px; */
+}
+
+.div-form {
+width: 45%;
+margin: 0 auto;
+border: solid rgb(188,240,224);
+border-radius: 10px;
+padding: 15px;
+}
+
+.form-city{
+  margin-left: 5px;
+  border: solid  green;
+  border-radius: 5px;
+  color: green;
+  padding: 2px;
+}
+
+.form-date-in, .form-date-out {
+  color: green;
+  border: solid green;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.form-button {
+  color: green;
+  border: solid green;
+  margin: 5px;
+  border-radius: 5px;
+  width: 100px;
+  padding: 2px;
 }
