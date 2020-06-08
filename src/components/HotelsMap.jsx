@@ -27,12 +27,12 @@ class HotelsMap extends Component {
   async componentDidMount() {
     const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.city}+${this.props.hotelName}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`;
     const nameSearch = await axios(url)
-    // console.log(nameSearch.data.results[0].geometry.location)
+    console.log(nameSearch.data.results[0])
     this.setState({
       mapData: nameSearch.data.results[0].geometry.location
     })
-    // console.log(this.state.mapData)
-    console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+    console.log(this.state.mapData)
+    // console.log(process.env.REACT_APP_GOOGLE_API_KEY)
   } 
     
   

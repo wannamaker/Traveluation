@@ -60,7 +60,7 @@ class App extends Component {
             <HotelsList hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo} city={this.state.city} passSubmit={this.passSubmit} formSubmitted={this.state.formSubmitted}/>
           </Route>
           <Route path="/:hotel">
-            <HotelDetails hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo}/>
+            <HotelDetails hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo} city={this.state.city}/>
           </Route>
 
           <Route path="/About">
