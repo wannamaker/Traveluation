@@ -38,25 +38,32 @@ export default class HotelsList extends Component {
                 <div className="hotel-info">
                   <div>
                     <h3>{hotel.name}</h3>
-                    <p>{hotel.stars} stars</p>
+                    <p className="small-text">{hotel.stars} stars</p>
                   </div>
                   <div className="detail-container">
                     <div className="price-display">
                       <br />
-                      <p className="p-price">Total for {hotel.last_price_info.nights} nights:</p>
+                      <br />
+                      <br />
+                      <p className="p-price" className="small-text">Total for {hotel.last_price_info.nights} nights:</p>
                       <p>{hotel.last_price_info.price}</p>
                       <br />
-                      <p>Price per night:</p>
-                      <p>{hotel.last_price_info.price_pn}</p>
+                      <p className="small-text">Price per night:</p>
+                      <p className="small-text">{hotel.last_price_info.price_pn}</p>
                     </div>
                     <div className="detail-info">
-                      <p>{hotel.ty_summary}</p>
                       <br />
-                      <p>wifi: {hotel.has_wifi ? "yes" : "no"}</p>
+                      <br />
+                      <p className="summary-text">{hotel.ty_summary}</p>
+                      <span className="wifi">
+                        <p className="small-text">wifi: {hotel.has_wifi ? "yes" : "no"}</p>
+                        </span>
                     </div>
                     <div className="location">
                       <br />
-                      {hotel.hotel_type.map(type => <p>{type}</p>)}
+                      <br />
+                      <br />
+                      {hotel.hotel_type.map(type => <p className="small-text">{type}</p>)}
                     </div>
                   </div>
                 </div>
@@ -69,7 +76,7 @@ export default class HotelsList extends Component {
               </div>
             </Link>
           )}
-          {this.props.hotelArrayInfo.length > 0 && <button onClick={this.increase}>More</button>}
+          {this.props.hotelArrayInfo.length > 0 && <button onClick={this.increase} className="more-button">More</button>}
         
         </div>
       )

@@ -32,6 +32,7 @@ margin: 2px;
 /* border: solid black; */
 text-align: center;
 color: green;
+position: relative;
 }
 
 .detail-container {
@@ -42,6 +43,7 @@ color: green;
   overflow: auto;
   background-color: white;
   color: brown;
+  height: 247px;
   /* padding: 20px; */
   /* height: 120px; */
 }
@@ -64,6 +66,9 @@ overflow: auto;
 background-color: wheat;
 margin: 2px;
 /* border: solid black; */
+position: relative;
+height: auto;
+width: auto;
 }
 
 .loading {
@@ -79,3 +84,23 @@ margin: 50px auto;
   text-decoration: green;
   color: green;
 }
+
+.small-text {
+  font-size: 10px;
+}
+
+.wifi{
+  position: absolute;
+  bottom: 0;
+  }
+
+  .more-button {
+  
+  margin: 10px 600px;
+  color: green;
+  border: solid green;
+  
+  border-radius: 5px;
+  width: 100px;
+  padding: 2px;
+  }
