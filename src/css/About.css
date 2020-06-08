@@ -2,3 +2,15 @@
   margin: 0;
   padding: 0;
 }
+
+.text-about{
+  width: 60%;
+  margin: auto;
+}
+
+.about-title {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  color: green;
+}

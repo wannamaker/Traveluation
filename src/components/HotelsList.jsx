@@ -10,7 +10,14 @@ import HotelsMap from './HotelsMap';
 export default class HotelsList extends Component {
   //  console.log(props.city)
   state = {
-     limit: 5
+    limit: 5,
+    googleSearch: null
+  }
+
+  passSearch = (search) => {
+    this.setState({
+      googleSearch: this.props.search
+    })
   }
   
   increase = () => {
@@ -70,7 +77,7 @@ export default class HotelsList extends Component {
 
 
                 <div className="map">
-                  <HotelsMap hotelName={hotel.name} city={this.props.city} />
+                  <HotelsMap hotelName={hotel.name} city={this.props.city} passSearch={this.passSearch} />
                 </div>
 
               </div>

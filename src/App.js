@@ -17,7 +17,8 @@ class App extends Component {
     hotelArray: [],
     hotelArrayInfo: [],
     city: '',
-    formSubmitted: false
+    formSubmitted: false,
+    googleSearch: null
   }
 
   passSubmit = () => {
@@ -29,6 +30,12 @@ class App extends Component {
   passCity = (hotelsCity) => {
     this.setState({
       city: hotelsCity
+    })
+  }
+
+  passSearch = (search) => {
+    this.setState({
+      googleSearch: search
     })
   }
 
@@ -57,10 +64,10 @@ class App extends Component {
           
           <Route path="/" exact>
             <Form reservation={this.reservation} reserveInfo={this.reserveInfo} passCity={this.passCity} passSubmit={this.passSubmit}/>
-            <HotelsList hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo} city={this.state.city} passSubmit={this.passSubmit} formSubmitted={this.state.formSubmitted}/>
+            <HotelsList hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo} city={this.state.city} passSubmit={this.passSubmit} formSubmitted={this.state.formSubmitted} passSearch={this.passSearch}/>
           </Route>
           <Route path="/:hotel">
-            <HotelDetails hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo} city={this.state.city}/>
+            <HotelDetails hotelArray={this.state.hotelArray} hotelArrayInfo={this.state.hotelArrayInfo} city={this.state.city} passSearch={this.passSearch}/>
           </Route>
 
           <Route path="/About">
