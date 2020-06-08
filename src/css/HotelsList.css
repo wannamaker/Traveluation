@@ -106,3 +106,269 @@ margin: 50px auto;
   }
 
   
+
+
+  @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+
+    .info-container{
+      width: 80%;
+      margin: 0 auto;
+      display: block; 
+      grid-template-rows: 27.7% 45% 27.5%;
+      margin-top: 20px;
+      font-family: 'Open Sans', sans-serif;
+      border: solid green;
+      border-radius: 5px;
+      }
+      
+      .hotel-picture{
+        width: 100%;
+        grid-area: picture;
+      
+      margin: 2px;
+      
+      }
+      
+      .hotel-image-front{
+        width: 100%;
+      }
+      
+      .hotel-info{
+        grid-area: info;
+      
+      margin: 2px;
+      
+      text-align: center;
+      color: green;
+      position: relative;
+      }
+      
+      .detail-container {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+      }
+      .price-display{
+        overflow: auto;
+        background-color: white;
+        color: brown;
+        height: 247px;
+        
+      }
+      .p-price {
+       
+      }
+      
+      .detail-info{
+        overflow: auto;
+        background-color: beige;
+      }
+      
+      .location {
+        overflow: auto;
+        background-color: white;
+      }
+      
+      .map {
+        grid-area: map;
+      overflow: auto;
+      background-color: wheat;
+      margin: 2px;
+      
+      position: relative;
+      height: auto;
+      width: auto;
+      }
+      
+      .loading {
+      height: 200px;
+      width: 20%;
+      margin: 50px auto;
+      }
+      .lnk {
+        text-decoration: none;
+        color: black;
+      }
+      .lnk:hover{
+        text-decoration: green;
+        color: green;
+      }
+      
+      .small-text {
+        font-size: 10px;
+      }
+      
+      .wifi{
+        position: absolute;
+        bottom: 0;
+        }
+      
+        .more-button {
+        
+        margin: 10px 130px;
+        color: green;
+        border: solid green;
+        
+        border-radius: 5px;
+        width: 100px;
+        padding: 2px;
+        }
+    
+
+
+
+
+        .info-container {
+      grid-template-areas: 
+      'picture'
+      'info'
+      'map';
+    }
+
+    .hotel-picture{
+      grid-area: picture;
+    }
+
+    .map {
+      grid-area: map;
+    }
+
+    .hotel-info{
+      grid-area: info;
+    }
+}
+  
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+    .info-container{
+      width: 80%;
+      margin: 0 auto;
+      display: block; 
+      grid-template-rows: 27.7% 45% 27.5%;
+      margin-top: 20px;
+      font-family: 'Open Sans', sans-serif;
+      border: solid green;
+      border-radius: 5px;
+      }
+      
+      .hotel-picture{
+        width: 100%;
+        grid-area: picture;
+      
+      margin: 2px;
+      
+      }
+      
+      .hotel-image-front{
+        width: 100%;
+      }
+      
+      .hotel-info{
+        grid-area: info;
+      
+      margin: 2px;
+      
+      text-align: center;
+      color: green;
+      position: relative;
+      }
+      
+      .detail-container {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+      }
+      .price-display{
+        overflow: auto;
+        background-color: white;
+        color: brown;
+        height: 247px;
+        
+      }
+      .p-price {
+       
+      }
+      
+      .detail-info{
+        overflow: auto;
+        background-color: beige;
+      }
+      
+      .location {
+        overflow: auto;
+        background-color: white;
+      }
+      
+      .map {
+        grid-area: map;
+      overflow: auto;
+      background-color: wheat;
+      margin: 2px;
+      
+      position: relative;
+      height: auto;
+      width: auto;
+      }
+      
+      .loading {
+      height: 200px;
+      width: 20%;
+      margin: 50px auto;
+      }
+      .lnk {
+        text-decoration: none;
+        color: black;
+      }
+      .lnk:hover{
+        text-decoration: green;
+        color: green;
+      }
+      
+      .small-text {
+        font-size: 10px;
+      }
+      
+      .wifi{
+        position: absolute;
+        bottom: 0;
+        }
+      
+        .more-button {
+        
+        margin: 10px 130px;
+        color: green;
+        border: solid green;
+        
+        border-radius: 5px;
+        width: 100px;
+        padding: 2px;
+        }
+    
+
+
+
+
+        .info-container {
+      grid-template-areas: 
+      'picture'
+      'info'
+      'map';
+    }
+
+    .hotel-picture{
+      grid-area: picture;
+    }
+
+    .map {
+      grid-area: map;
+    }
+
+    .hotel-info{
+      grid-area: info;
+    }
+}

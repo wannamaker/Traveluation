@@ -52,3 +52,43 @@ width: auto;
   margin: 20px auto;
   text-align: center;
 }
+
+
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait)  {
+
+
+    .container-details {
+      width: 90%;
+      margin: 0 auto;
+      display: block;
+      grid-template-columns: 60% 40%;
+      margin-top: 20px;
+      font-family: 'Open Sans', sans-serif;
+      border: solid green;
+      border-radius: 5px;
+    }
+
+  }
+
+  @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .container-details {
+      width: 90%;
+      margin: 0 auto;
+      display: block;
+      grid-template-columns: 60% 40%;
+      margin-top: 20px;
+      font-family: 'Open Sans', sans-serif;
+      border: solid green;
+      border-radius: 5px;
+     
+    }
+}

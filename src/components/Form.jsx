@@ -71,7 +71,8 @@ this.props.passSubmit()
   render() {
     
     return (
-      <div>  <h2 className="pick">Pick a city, a check-in and a check-out date</h2>
+      <div>
+        <div className="div-pick"><h2 className="pick">Pick a city, a check-in and a check-out date</h2></div>
       <div className="div-form">
         
         <form className="initial-form">
