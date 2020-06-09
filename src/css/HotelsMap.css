@@ -6,3 +6,9 @@
 /* .rendered-map {
 height: 0;
 } */
+
+
+.google-map-style {
+  width: 280px;
+  height: 287px;
+}

@@ -13,7 +13,8 @@ export default class Form extends Component {
       checkOut: "",
       // hotelArray: [],
       hotelArrayInfo: [],
-      formSubmitted: false
+      formSubmitted: false,
+      date: null
     }
 
   }
@@ -77,7 +78,7 @@ this.props.passSubmit()
         
         <form className="initial-form">
           <input type="text" placeholder="City" onChange={this.handleCityChange} className="form-city"/>
-          <input type="date" placeholder="Check-in" onChange={this.handleCheckInChange} className="form-date-in"/>
+            <input type="date" placeholder="Check-in" onChange={this.handleCheckInChange} className="form-date-in" min="2020-06-08"/>
           <input type="date" placeholder="Check-out" onChange={this.handleCheckOutChange} className="form-date-out"/>
           <button onClick={this.submitSearch} className="form-button">Submit</button>
         </form>

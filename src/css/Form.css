@@ -8,8 +8,8 @@ input, button, form {
 }
 
 .initial-form {
-  /* margin: 0 auto;
-  height: 40px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .div-form {
@@ -25,7 +25,7 @@ padding: 15px;
   border: solid  green;
   border-radius: 5px;
   color: green;
-  padding: 2px;
+  /* padding: 2px; */
 }
 
 .form-date-in, .form-date-out {
@@ -33,6 +33,7 @@ padding: 15px;
   border: solid green;
   margin: 5px;
   border-radius: 5px;
+  /* padding: 5px; */
 }
 
 .form-button {
@@ -49,14 +50,21 @@ padding: 15px;
   width: 45%;
   margin: 0 auto;
   padding-bottom: 20px;
-  padding-left: 75px;
+  padding-left: 130px;
 }
 
+/* phone */
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait)  {
+
+    .initial-form {
+      display: block;
+      
+    }
+    
 
     .div-pick {
       text-align: center;
@@ -70,7 +78,7 @@ padding: 15px;
       padding-left: 1px;
     }
     .form-button {
-      margin-left: 1.5rem;
+      margin-left: 2rem;
       color: green;
       border: solid green;
       border-radius: 5px;
@@ -79,11 +87,16 @@ padding: 15px;
     }
   }
 
-  @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
 
+
+  @media only screen 
+  and (max-device-width: 767px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  
+    .initial-form {
+      display: block;
+      
+    }
 
     .div-pick {
       text-align: center;
@@ -102,7 +115,8 @@ padding: 15px;
     }
 
     .form-city{
-      margin-left: 5rem;
+      /* margin-left: 7.5rem; */
+      margin: 2px auto;
       border: solid  green;
       border-radius: 5px;
       color: green;
@@ -110,14 +124,70 @@ padding: 15px;
     }
 
     .form-date-in, .form-date-out {
-      margin-left: 5rem;
+      /* margin-left: 7.5rem; */
+      margin: 2px auto;
       color: green;
       border: solid green;
       border-radius: 5px;
     }
     
     .form-button {
-      margin-left: 6.5rem;
+      /* margin-left: 3rem; */
+      /* margin: auto; */
+      color: green;
+      border: solid green;
+      border-radius: 5px;
+      /* width: 100px; */
+      /* padding: 2px; */
+      /* position: relative; */
+    }
+
+  }
+
+  /* ipad */
+  @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .initial-form {
+      display: block;
+      
+    }
+
+    .div-pick {
+      text-align: center;
+    }
+
+    .pick{
+      color: green;
+      width: 45%;
+      margin: 0 auto;
+      padding-bottom: 20px;
+      padding-left: 1px;
+    }
+
+    input{
+      display: block;
+    }
+
+    .form-city{
+      margin-left: 7.5rem;
+      border: solid  green;
+      border-radius: 5px;
+      color: green;
+      padding: 2px;
+    }
+
+    .form-date-in, .form-date-out {
+      margin-left: 7.5rem;
+      color: green;
+      border: solid green;
+      border-radius: 5px;
+    }
+    
+    .form-button {
+      margin-left: 9rem;
       color: green;
       border: solid green;
       border-radius: 5px;

@@ -23,20 +23,42 @@ class HotelsMap extends Component {
     mapData: null
   };
 
+  async componentDidUpdate(prevProps) {
+    if (prevProps.city !== this.props.city) {
+      this.setState({
+        mapData: null
+      })
+      const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.city}+${this.props.hotelName}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`;
+      const nameSearch = await axios(url)
+      console.log(nameSearch.data.results[0])
+      if (this.props.passSearch) {
+        this.props.passSearch(nameSearch.data.results[0])
+      }
+      if (nameSearch.data.results[0]) {
+        this.setState({
+          mapData: nameSearch.data.results[0].geometry.location
+        })
+        console.log(this.state.mapData)
+        // console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+      }
+    }
+  }
 
   async componentDidMount() {
-    const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.city}+${this.props.hotelName}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`;
+    const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.city}+${this.props.hotelName}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`;
     const nameSearch = await axios(url)
     console.log(nameSearch.data.results[0])
-
-    // this.props.passSearch(nameSearch.data.results[0])
-
-    this.setState({
-      mapData: nameSearch.data.results[0].geometry.location
-    })
-    console.log(this.state.mapData)
-    // console.log(process.env.REACT_APP_GOOGLE_API_KEY)
-  } 
+    if (this.props.passSearch) {
+      this.props.passSearch(nameSearch.data.results[0])
+    }
+    if (nameSearch.data.results[0]) {
+      this.setState({
+        mapData: nameSearch.data.results[0].geometry.location
+      })
+      console.log(this.state.mapData)
+      // console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+    }
+  }  
     
   
 
@@ -80,11 +102,17 @@ class HotelsMap extends Component {
           <Map
           google={this.props.google}
           zoom={16}
-          style={mapStyles}
+          // style={mapStyles}
           initialCenter={{
             lat: this.state.mapData.lat, lng: this.state.mapData.lng
             // lat: 48.843753, lng: 2.3718805
           }}
+              
+          center={{
+            lat: this.state.mapData.lat, lng: this.state.mapData.lng
+            // lat: 48.843753, lng: 2.3718805
+          }}
+              className="google-map-style"
           >
             
            

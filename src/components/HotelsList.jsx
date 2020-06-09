@@ -16,7 +16,7 @@ export default class HotelsList extends Component {
 
   passSearch = (search) => {
     this.setState({
-      googleSearch: this.props.search
+      googleSearch: search
     })
   }
   
@@ -52,11 +52,12 @@ export default class HotelsList extends Component {
                       <br />
                       <br />
                       <br />
-                      <p className="p-price" className="small-text">Total for {hotel.last_price_info.nights} nights:</p>
+                     { hotel.last_price_info && <><p className="p-price" className="small-text">Total for {hotel.last_price_info.nights} nights:</p>
                       <p>{hotel.last_price_info.price}</p>
                       <br />
                       <p className="small-text">Price per night:</p>
-                      <p className="small-text">{hotel.last_price_info.price_pn}</p>
+                        <p className="small-text">{hotel.last_price_info.price_pn}</p>
+                        </>}
                     </div>
                     <div className="detail-info">
                       <br />
