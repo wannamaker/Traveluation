@@ -41,11 +41,12 @@ width: 100%;
 margin: -30 auto;
 }
 .map-det {
-  /* display: table; */
-  margin: 45px 100px;
-  position: relative;
+  
+margin: 45px 100px;
+position: relative;
 height: auto;
 width: auto;
+background: greenyellow;
 }
 
 .text-details {

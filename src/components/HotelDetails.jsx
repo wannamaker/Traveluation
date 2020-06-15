@@ -54,12 +54,12 @@ function HotelDetails(props) {
                     </div>
                    
                     <div className="map-det">
-              <HotelsMap hotelName={thisHotel.name} city={props.city} />
+              <HotelsMap hotelName={thisHotel.name} city={props.city} /> 
               </div>
                     
                   </div>
-             <div className="map-details">
-                
+             <div className="map-details" className=".map-det">
+             {/* <HotelsMap hotelName={thisHotel.name} city={props.city} /> */}
           </div>
           
         </div>

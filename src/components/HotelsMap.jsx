@@ -102,7 +102,7 @@ class HotelsMap extends Component {
           <Map
           google={this.props.google}
           zoom={16}
-          // style={mapStyles}
+          style={mapStyles}
           initialCenter={{
             lat: this.state.mapData.lat, lng: this.state.mapData.lng
             // lat: 48.843753, lng: 2.3718805

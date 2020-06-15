@@ -13,21 +13,25 @@ export default class Form extends Component {
       checkOut: "",
       // hotelArray: [],
       hotelArrayInfo: [],
-      formSubmitted: false,
-      date: null
+      formSubmitted: false
+      
     }
 
   }
+
+  
   
   handleCityChange = (e) => {
     this.setState({
-      city: e.target.value
+      city: e.target.value,
+      
     })
   }
 
   handleCheckInChange = (e) => {
     this.setState({
-      checkIn: e.target.value
+      checkIn: e.target.value,
+      
     })
   }
 
@@ -71,16 +75,30 @@ this.props.passSubmit()
   
 
   render() {
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1;
+    let yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd
+    }
+    if (mm < 10) {
+      mm = '0' + mm
+    }
+    let date = yyyy+'-'+mm+'-'+dd;
     
+    console.log(date)
+   
     return (
+     
       <div>
         <div className="div-pick"><h2 className="pick">Pick a city, a check-in and a check-out date</h2></div>
       <div className="div-form">
         
         <form className="initial-form">
           <input type="text" placeholder="City" onChange={this.handleCityChange} className="form-city"/>
-            <input type="date" placeholder="Check-in" onChange={this.handleCheckInChange} className="form-date-in" min="2020-06-08"/>
-          <input type="date" placeholder="Check-out" onChange={this.handleCheckOutChange} className="form-date-out"/>
+            <input type="date" placeholder="Check-in" onChange={this.handleCheckInChange} className="form-date-in" min={date}/>
+            <input type="date" placeholder="Check-out" onChange={this.handleCheckOutChange} className="form-date-out" min={this.state.checkIn}/>
           <button onClick={this.submitSearch} className="form-button">Submit</button>
         </form>
         
