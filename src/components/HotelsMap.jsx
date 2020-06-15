@@ -28,7 +28,7 @@ class HotelsMap extends Component {
       this.setState({
         mapData: null
       })
-      const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.city}+${this.props.hotelName}&key=${REACT_APP_GOOGLE_API_KEY}`;
+      const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.city}+${this.props.hotelName}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`;
       const nameSearch = await axios(url)
       console.log(nameSearch.data.results[0])
       if (this.props.passSearch) {
@@ -45,7 +45,7 @@ class HotelsMap extends Component {
   }
 
   async componentDidMount() {
-    const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.city}+${this.props.hotelName}&key=${REACT_APP_GOOGLE_API_KEY}`;
+    const url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.props.city}+${this.props.hotelName}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`;
     const nameSearch = await axios(url)
     console.log(nameSearch.data.results[0])
     if (this.props.passSearch) {
@@ -140,5 +140,5 @@ class HotelsMap extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: REACT_APP_GOOGLE_API_KEY
+  apiKey: process.env.REACT_APP_GOOGLE_API_KEY
 })(HotelsMap);
